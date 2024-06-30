@@ -4,11 +4,8 @@
 
 @layer base {
   :root {
-    /* --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%; */
-
-    --background: 120 4% 11%;
-    --foreground: 32 100% 93%;
+    --background: 0, 0%, 0%, 0.8;
+    --foreground: 32 100% 90%;
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -16,10 +13,10 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 295, 90%, 50%;
+    --primary-foreground: 32 100% 90%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 260, 89%, 31%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
@@ -34,6 +31,19 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    --secondary-glow: conic-gradient(from 10deg at 50% 50%,
+        #eb7494 0deg,
+        #ae77b2 55deg,
+        #97b5da 120deg,
+        #0099ca 160deg,
+        transparent 360deg);
+    --third-glow: conic-gradient(from 90deg at 50% 50%,
+        #ff8b7e 0deg,
+        #e24e6b 160deg,
+        #7ed2da 120deg,
+        #8bdce0 55deg,
+        transparent 360deg);
   }
 
   .dark {
@@ -79,7 +89,7 @@
   }
 
   .max-section {
-    @apply max-w-screen-2xl mx-4 md:mx-auto;
+    @apply max-w-screen-xl mx-4 md:mx-auto;
   }
 
   .no-scrollbar::-webkit-scrollbar {

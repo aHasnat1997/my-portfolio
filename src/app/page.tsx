@@ -1,12 +1,19 @@
+import About from '@/components/home/About';
 import Hero from '@/components/home/Hero';
-import LatestBlog from '@/components/home/LatestBlog';
-import React from 'react';
+import SkillSection from '@/components/home/SkillSection';
+
+import styles from "./home.module.css";
 
 const page = () => {
   return (
-    <main className='min-h-screen'>
-      <Hero />
-      {/* <LatestBlog /> */}
+    <main className={styles.animatedBg}>
+      <div className={styles.mainBg}>
+        <div className={styles.mainBgDiv}>
+          <Hero />
+          <About />
+          <SkillSection />
+        </div>
+      </div>
     </main>
   );
 };
