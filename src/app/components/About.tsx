@@ -21,8 +21,8 @@ function About() {
           className=''
         />
         <div>
-          <h2 className='text-6xl font-semibold'>About Me</h2>
-          <div className='mt-20 space-y-4'>
+          <h2 className='text-6xl font-semibold pb-14'>About Me</h2>
+          <div className='space-y-4'>
             <p>
               I&apos;m A.Hasnat, a passionate full-stack developer with a strong foundation in both front-end and back-end technologies. I specialize in building dynamic and responsive web applications using a diverse tech stack.
             </p>

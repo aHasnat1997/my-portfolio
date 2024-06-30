@@ -1,8 +1,9 @@
 import assets from "@/assets";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-const Hero = () => {
+function Hero() {
   return (
     <section className='max-section flex flex-col justify-center items-center gap-8 pt-28 mb-12'>
       <h1 className="text-6xl font-semibold">👋Hello, I&apos;m</h1>
@@ -18,7 +19,9 @@ const Hero = () => {
         />
       </div>
       <div className="space-x-2 mt-8">
-        <Button size={'lg'}>View My Work</Button>
+        <Link href='#projects'>
+          <Button size={'lg'}>View My Work</Button>
+        </Link>
         <Button variant={'outline'} size={'lg'}>Let&apos;s Talk</Button>
       </div>
     </section>

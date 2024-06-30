@@ -27,11 +27,11 @@ const MainNav = () => {
       title: 'About'
     },
     {
-      path: '/projects',
+      path: '#projects',
       title: 'Projects'
     },
     {
-      path: '/blog',
+      path: '#blogs',
       title: 'Blogs'
     },
     {

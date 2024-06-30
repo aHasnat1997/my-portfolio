@@ -9,7 +9,6 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 const font = Poppins({ weight: ['400', '600', '800'], subsets: ['latin-ext'] });
 
 export const metadata: Metadata = {
-  icons: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/blogger-round-color-icon.png",
   title: "A.Hasnat - Welcome to my dev portfolio...",
   description: "Welcome to my dev portfolio.",
 };
