@@ -35,7 +35,7 @@ const MainNav = () => {
       title: 'Blogs'
     },
     {
-      path: '/contact',
+      path: '#contact',
       title: 'Contact'
     }
   ];

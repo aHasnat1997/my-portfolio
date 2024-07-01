@@ -22,7 +22,9 @@ function Hero() {
         <Link href='#projects'>
           <Button size={'lg'}>View My Work</Button>
         </Link>
-        <Button variant={'outline'} size={'lg'}>Let&apos;s Talk</Button>
+        <Link href='#contact'>
+          <Button variant={'outline'} size={'lg'}>Let&apos;s Talk</Button>
+        </Link>
       </div>
     </section>
   );

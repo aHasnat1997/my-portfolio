@@ -9,7 +9,7 @@ const LatestBlog = async () => {
   const totalData = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
-    <section id="blogs" className="max-section py-8">
+    <section id="blogs" className="max-section pt-40 pb-4">
       <h2 className='text-6xl font-semibold pb-14'>My Latest Blog</h2>
       <div className="grid grid-cols-3 gap-8">
         {

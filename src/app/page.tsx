@@ -5,6 +5,8 @@ import SkillSection from '@/app/components/SkillSection';
 import styles from "./home.module.css";
 import Projects from '@/app/components/Projects';
 import LatestBlog from './components/LatestBlog';
+import Contact from './components/Contact';
+import Copyright from './components/Copyright';
 
 const page = () => {
   return (
@@ -16,6 +18,8 @@ const page = () => {
           <SkillSection />
           <Projects />
           <LatestBlog />
+          <Contact />
+          <Copyright />
         </div>
       </div>
     </main>
