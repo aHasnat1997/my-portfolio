@@ -10,11 +10,11 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 const page = () => {
   return (
     <div className='relative'>
-      <div className='w-full h-screen animatedBg fixed -z-10' />
+      <div className=' w-full h-screen animatedBg fixed -z-10' />
       <main>
         <Hero />
-        <About />
         <SkillSection />
+        <About />
         <Projects />
         <LatestBlog />
         <Contact />

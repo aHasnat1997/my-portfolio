@@ -24,11 +24,11 @@ function Contact() {
 
   return (
     <section id="contact" className="max-section relative mt-4 py-48">
-      <div className="flex items-center gap-28">
+      <div className="flex flex-col md:flex-row items-center gap-28">
         <div>
-          <h2 className='text-6xl font-semibold pb-14'>Contact with Me</h2>
-          <h4 className='text-2xl font-semibold mb-4'>Let&apos;s Build Something Amazing Together</h4>
-          <p>
+          <h2 className='text-4xl md:text-6xl font-semibold pb-14'>Contact with Me</h2>
+          <h4 className='text-xl md:text-2xl font-semibold mb-4'>Let&apos;s Build Something Amazing Together</h4>
+          <p className="text-lg md:text-base">
             I&apos;m excited to collaborate on innovative projects. Whether you have a question, a project idea, or just want to connect, feel free to reach out. Let&apos;s create something remarkable!
           </p>
           <div className="flex items-center gap-4 mt-8">

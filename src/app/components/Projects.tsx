@@ -37,21 +37,21 @@ function Projects() {
 
   return (
     <section id="projects" className="max-section pt-36 pb-20">
-      <h2 className='text-6xl font-semibold text-center pb-14'>My Projects</h2>
+      <h2 className='text-4xl md:text-6xl font-semibold text-center pb-14'>My Projects</h2>
       <div className="w-full no-scrollbar space-y-24 mt-14">
         {
           projectData.map((project, i) => <div
             key={i}
-            className='sticky rounded-xl top-[12rem]'
+            className='sticky rounded-xl top-16 md:top-[12rem]'
           >
             <div
-              className={`w-full bg-card rounded-2xl flex items-start ${i % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}
+              className={`w-full bg-card rounded-2xl flex flex-col items-start ${i % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
               style={{
                 position: 'relative',
                 top: `calc(-5vh + ${i * 25}px)`,
               }}
             >
-              <div className={`w-1/2 h-96 overflow-hidden rounded-2xl`}>
+              <div className={`w-full md:w-1/2 h-48 md:h-96 overflow-hidden rounded-2xl`}>
                 <Image
                   alt={project.title + ' ' + 'project image'}
                   src={project.thumpImage}
@@ -60,12 +60,12 @@ function Projects() {
                   className="w-full"
                 />
               </div>
-              <div className={`w-1/2 h-full relative p-6`}>
-                <h3 className={`text-4xl font-semibold mb-4 ${i % 2 === 0 ? 'text-start' : 'text-end'}`}>{project.title}</h3>
-                <div className={`w-[42rem] h-40 mt-6 backdrop-blur-sm bg-white/10 p-8 rounded-xl absolute ${i % 2 === 0 ? 'left-8' : 'right-8'}`}>
-                  <p className="text-justify line-clamp-4">{project.shortDes}</p>
+              <div className={`w-full md:w-1/2 h-full relative p-6`}>
+                <h3 className={`text-2xl md:text-4xl font-semibold mb-4 ${i % 2 === 0 ? 'text-start' : 'text-end'}`}>{project.title}</h3>
+                <div className={`w-full md:w-[42rem] md:h-40 mt-6 backdrop-blur-sm bg-white/10 p-8 rounded-xl md:absolute ${i % 2 === 0 ? 'left-8' : 'right-8'}`}>
+                  <p className="text-justify line-clamp-6 md:line-clamp-4">{project.shortDes}</p>
                 </div>
-                <div className={`absolute top-72 ${i % 2 === 0 ? 'left-8' : 'right-8'}`}>
+                <div className={`mt-4 md:mt-0 md:absolute top-72 ${i % 2 === 0 ? 'left-8' : 'right-8'}`}>
                   <Button variant={'outline'}>View Details</Button>
                 </div>
               </div>

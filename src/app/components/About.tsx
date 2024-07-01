@@ -10,9 +10,9 @@ function About() {
         src={assets.vector.vectorOne}
         width={100}
         height={100}
-        className='absolute top-80 left-[28rem]'
+        className='hidden md:block absolute top-80 left-[28rem]'
       />
-      <div className='flex items-center gap-16'>
+      <div className='flex flex-col md:flex-row items-center gap-16'>
         <Image
           alt='image'
           src={assets.image.myImg}
@@ -20,8 +20,8 @@ function About() {
           height={500}
           className=''
         />
-        <div>
-          <h2 className='text-6xl font-semibold pb-14'>About Me</h2>
+        <div className='w-full'>
+          <h2 className='text-4xl md:text-6xl font-semibold pb-14'>About Me</h2>
           <div className='space-y-4'>
             <p>
               I&apos;m <span className='font-semibold'>A.Hasnat,</span> a passionate full-stack developer with a strong foundation in both front-end and back-end technologies. I specialize in building dynamic and responsive web applications using a diverse tech stack.
