@@ -7,11 +7,9 @@ import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 
 const MainNav = () => {
-  // making sticky nav after scroll 
   const [sticky, setSticky] = useState<boolean>(false);
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      console.log(window.scrollY);
       if (window.scrollY > 720) {
         setSticky(true);
       }
@@ -41,15 +39,14 @@ const MainNav = () => {
   ];
 
   return (
-    // <nav className={`py-4 top-0 fixed right-0 left-0 z-40`}>
-    <nav className={`py-4 duration-1000 ${sticky ? 'top-0 fixed right-0 left-0 z-40' : '-top-20'}`}>
+    <nav className={`py-4 duration-1000 ${sticky ? 'bg-black top-0 fixed right-0 left-0 z-40' : '-top-20'}`}>
       <div className="max-section flex justify-between items-center">
         <Link href='/'>
           <Image
             alt="logo"
             src={assets.image.logoW}
-            width={80}
-            height={80}
+            width={60}
+            height={60}
             className="duration-500 hover:drop-shadow-[0_4px_8px_rgb(255,255,255)]"
           />
         </Link>
@@ -66,7 +63,9 @@ const MainNav = () => {
           }
         </ul>
         <div>
-          <Button variant={'outline'}>Download Resume</Button>
+          <Link href='/ABUL_HASNAT_Resume.pdf' target='_blank' download={true}>
+            <Button variant={'outline'}>Download Resume</Button>
+          </Link>
         </div>
       </div>
     </nav>

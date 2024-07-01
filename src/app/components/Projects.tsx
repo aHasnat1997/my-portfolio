@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 function Projects() {
@@ -35,34 +36,43 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="max-section py-20">
+    <section id="projects" className="max-section pt-36 pb-20">
       <h2 className='text-6xl font-semibold text-center pb-14'>My Projects</h2>
-
-      <div className="space-y-14">
+      <div className="w-full no-scrollbar space-y-24 mt-14">
         {
           projectData.map((project, i) => <div
             key={i}
-            className={`w-full flex items-start ${i % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}
+            className='sticky rounded-xl top-[12rem]'
           >
-            <div className={`w-1/2 h-72 overflow-hidden bg-slate-50 rounded-xl`}>
-              <Image
-                alt={project.title + ' ' + 'project image'}
-                src={project.thumpImage}
-                width={500}
-                height={500}
-                className="w-full"
-              />
-            </div>
-            <div className={`w-1/2 relative`}>
-              <h3 className={`text-4xl font-semibold mb-4 ${i % 2 === 0 ? 'text-start' : 'text-end'}`}>{project.title}</h3>
-              <div className={`w-[34rem] backdrop-blur-sm bg-card/50 p-8 rounded-xl absolute ${i % 2 === 0 ? 'left-0' : 'right-0'}`}>
-                <p className="text-justify">{project.shortDes}</p>
+            <div
+              className={`w-full bg-card rounded-2xl flex items-start ${i % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}
+              style={{
+                position: 'relative',
+                top: `calc(-5vh + ${i * 25}px)`,
+              }}
+            >
+              <div className={`w-1/2 h-96 overflow-hidden rounded-2xl`}>
+                <Image
+                  alt={project.title + ' ' + 'project image'}
+                  src={project.thumpImage}
+                  width={500}
+                  height={500}
+                  className="w-full"
+                />
+              </div>
+              <div className={`w-1/2 h-full relative p-6`}>
+                <h3 className={`text-4xl font-semibold mb-4 ${i % 2 === 0 ? 'text-start' : 'text-end'}`}>{project.title}</h3>
+                <div className={`w-[42rem] h-40 mt-6 backdrop-blur-sm bg-white/10 p-8 rounded-xl absolute ${i % 2 === 0 ? 'left-8' : 'right-8'}`}>
+                  <p className="text-justify line-clamp-4">{project.shortDes}</p>
+                </div>
+                <div className={`absolute top-72 ${i % 2 === 0 ? 'left-8' : 'right-8'}`}>
+                  <Button variant={'outline'}>View Details</Button>
+                </div>
               </div>
             </div>
           </div>)
         }
       </div>
-
     </section>
   );
 }

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <section className='max-section flex flex-col justify-center items-center gap-8 pt-28 mb-12'>
+    <section className='max-section flex flex-col justify-center items-center gap-8 pt-28 mb-12 animatedBg'>
       <h1 className="text-6xl font-semibold">👋Hello, I&apos;m</h1>
       <h1 className="text-6xl font-semibold">Full-Stack Developer</h1>
       <p className="md:w-1/2 text-justify text-lg">Creating efficient and scalable web solutions that drive success Whether it&apos;s building dynamic web applications or designing robust APIs, I bring ideas to life with code.</p>

@@ -40,11 +40,11 @@ function SkillSection() {
           src={assets.vector.vectorTwo}
           width={1000}
           height={1000}
-          className="w-full mx-auto -mt-6"
+          className="w-[80%] mx-auto -mt-6"
         />
       </div>
     </section>
   );
-}
+};
 
 export default SkillSection;
