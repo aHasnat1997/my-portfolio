@@ -6,8 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "vercel --prod",
+    "postinstall": "prisma generate"
   },
+  "buildCommand": "npm run build && prisma generate",
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
     "@prisma/client": "^5.12.1",
