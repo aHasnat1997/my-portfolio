@@ -25,6 +25,14 @@ const assets = {
     prisma: require('./icons/prisma.png'),
     react: require('./icons/react.png'),
     redux: require('./icons/redux.png')
+  },
+  projects: {
+    project1: require('./projects/Travel-Buddy-full.png'),
+    project2: require('./projects/Healthcare-Clint-full.png'),
+    project3: require('./projects/next-blog-app.png'),
+    project4: require('./projects/Melody-Masters.png'),
+    project5: require('./projects/Heroic-Toys.png'),
+    project6: require('./projects/Yum-Yum.png')
   }
 }
 
