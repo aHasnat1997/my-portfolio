@@ -1,9 +1,8 @@
 import { db } from "@/lib/db";
 import { Category, Prisma } from "@prisma/client";
-import { NextApiRequest } from "next";
 import { NextResponse, NextRequest } from "next/server";
 
-export async function GET(req: NextApiRequest) {
+export async function GET(req: Request | NextRequest) {
   try {
     const conditions: Prisma.BlogWhereInput[] = [];
     const queries = req.url?.split('?')[1]?.split('&');
