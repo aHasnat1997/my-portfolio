@@ -36,6 +36,7 @@ function Contact() {
               socialLinks.map((item, i) => <Link
                 key={i}
                 href={item.href}
+                target="_blank"
                 className="text-4xl duration-300 hover:drop-shadow-[0_4px_8px_rgb(255,255,255)]"
               >
                 {item.icon}

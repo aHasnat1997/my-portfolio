@@ -4,14 +4,7 @@ import React from 'react';
 
 function About() {
   return (
-    <section id='about' className='max-section relative pt-40 pb-16'>
-      <Image
-        alt='vector'
-        src={assets.vector.vectorOne}
-        width={100}
-        height={100}
-        className='hidden md:block absolute top-80 left-[28rem]'
-      />
+    <section id='about' className='max-section pt-40 pb-16'>
       <div className='flex flex-col md:flex-row items-center gap-16'>
         <Image
           alt='image'

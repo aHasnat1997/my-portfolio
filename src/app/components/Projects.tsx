@@ -1,37 +1,38 @@
+import assets from "@/assets";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 function Projects() {
   const projectData = [
     {
-      title: 'Example Project 1',
+      title: 'Travel-Buddy',
       shortDes: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
-      thumpImage: 'https://unbounce.com/photos/indochino-full.jpg'
+      thumpImage: assets.projects.project1
     },
     {
-      title: 'Example Project 2',
+      title: 'Healthcare',
       shortDes: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
-      thumpImage: 'https://unbounce.com/photos/indochino-full.jpg'
+      thumpImage: assets.projects.project2
     },
     {
-      title: 'Example Project 3',
+      title: 'Next Blog App',
       shortDes: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
-      thumpImage: 'https://unbounce.com/photos/indochino-full.jpg'
+      thumpImage: assets.projects.project3
     },
     {
-      title: 'Example Project 4',
+      title: 'Melody Masters',
       shortDes: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
-      thumpImage: 'https://unbounce.com/photos/indochino-full.jpg'
+      thumpImage: assets.projects.project4
     },
     {
-      title: 'Example Project 5',
+      title: 'Heroic Toys',
       shortDes: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
-      thumpImage: 'https://unbounce.com/photos/indochino-full.jpg'
+      thumpImage: assets.projects.project5
     },
     {
-      title: 'Example Project 6',
+      title: 'Yum-Yum Cuisine',
       shortDes: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
-      thumpImage: 'https://unbounce.com/photos/indochino-full.jpg'
+      thumpImage: assets.projects.project6
     }
   ];
 
@@ -62,7 +63,7 @@ function Projects() {
               </div>
               <div className={`w-full md:w-1/2 h-full relative p-6`}>
                 <h3 className={`text-2xl md:text-4xl font-semibold mb-4 ${i % 2 === 0 ? 'text-start' : 'text-end'}`}>{project.title}</h3>
-                <div className={`w-full md:w-[42rem] md:h-40 mt-6 backdrop-blur-sm bg-white/10 p-8 rounded-xl md:absolute ${i % 2 === 0 ? 'left-8' : 'right-8'}`}>
+                <div className={`w-full md:w-[38rem] md:h-40 mt-6 backdrop-blur-sm bg-white/10 p-8 rounded-xl md:absolute ${i % 2 === 0 ? 'left-8' : 'right-8'}`}>
                   <p className="text-justify line-clamp-6 md:line-clamp-4">{project.shortDes}</p>
                 </div>
                 <div className={`mt-4 md:mt-0 md:absolute top-72 ${i % 2 === 0 ? 'left-8' : 'right-8'}`}>

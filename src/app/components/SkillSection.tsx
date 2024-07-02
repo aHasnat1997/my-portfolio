@@ -18,7 +18,7 @@ function SkillSection() {
   ];
 
   return (
-    <section className="max-section mt-6">
+    <section className="max-section mt-8 md:mt-52">
       {/* <h2 className='text-4xl md:text-6xl font-semibold text-center pb-14'>Skills I have</h2> */}
       <div>
         <div className="w-fit mx-auto grid grid-cols-6 items-center gap-6 relative z-10">
@@ -27,8 +27,8 @@ function SkillSection() {
               <Image
                 alt="icon"
                 src={icon}
-                width={40}
-                height={40}
+                width={50}
+                height={50}
               />
             </div>)
           }
@@ -38,7 +38,7 @@ function SkillSection() {
           src={assets.vector.vectorTwo}
           width={1000}
           height={1000}
-          className="w-full mx-auto -mt-6"
+          className="w-full md:w-[55rem] mx-auto -mt-6"
         />
       </div>
     </section>
