@@ -9,9 +9,6 @@ import { CgMenuRight } from "react-icons/cg";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 
