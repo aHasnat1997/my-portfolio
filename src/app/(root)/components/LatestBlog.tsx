@@ -1,5 +1,6 @@
+import { BlogCard, LoadingBlogCard } from "@/components/sheared/BlogCard";
 import { TBlog } from "@/types";
-import { BlogCard, LoadingBlogCard } from "../../components/sheared/BlogCard";
+
 
 const LatestBlog = async () => {
   const data = await fetch(`${process.env.BASE_URL}/api/blog`, {

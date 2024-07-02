@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import MainNav from "@/components/sheared/MainNav";
 import { Toaster } from "@/components/ui/toaster";
 
 const font = Poppins({ weight: ['400', '600', '800'], subsets: ['latin-ext'] });
@@ -19,12 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <main className="flex flex-col gap-4">
-          <div className="bg-black/70">
-            <MainNav />
-            {children}
-          </div>
-        </main>
+        {children}
         <Toaster />
       </body>
     </html>

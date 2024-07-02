@@ -15,9 +15,11 @@ export default function Error({
   }, [error])
 
   return (
-    <div className='mt-32 text-4xl w-full flex flex-col justify-center items-center'>
-      <OctagonX size={'5rem'} />
-      <h2>{error.message}</h2>
+    <div className='text-4xl w-full h-screen flex items-center justify-center'>
+      <div className="flex flex-col items-center justify-center">
+        <OctagonX size={'5rem'} />
+        <h2>{error.message}</h2>
+      </div>
     </div>
   )
 }
