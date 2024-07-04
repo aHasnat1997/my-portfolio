@@ -7,53 +7,40 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Category {
-  Fashion
-  Travel
-  Lifestyle
-  Tech
-  Health
-  Business
-  Education
-  Programming
-  Music
-  Marketing
-  Sports
-  Entertainment
-  Productivity
-  Photography
-  Art
-  DIY
-  Science
-  Gaming
-  History
+model MyInfo {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  fullName  String
+  email     String   @unique
+  password  String
+  imageUrl  String
+  aboutMe   String
+  linkedin  String
+  github    String
+  whatsapp  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
-model User {
-  id    String  @id @default(auto()) @map("_id") @db.ObjectId
-  email String  @unique
-  name  String
-  image String?
-  rest  Json?
-  blog  Blog[]
-
-  @@map("users")
+model Projects {
+  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+  title              String
+  summary            String
+  aboutProject       String
+  imageUrl           String
+  liveLink           String?  @default("")
+  githubLinkFoClient String?  @default("")
+  githubLinkFoServer String?  @default("")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
 }
 
-model Blog {
+model Blogs {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   title     String
   summary   String
-  category  Category
-  userEmail String
-  user      User     @relation(fields: [userEmail], references: [email])
   content   String
   imageUrl  String   @default("")
   likes     Int      @default(0)
-  dislikes  Int      @default(0)
-  view      Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-
-  @@map("blogs")
 }

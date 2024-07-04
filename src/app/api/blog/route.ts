@@ -1,10 +1,10 @@
 import { db } from "@/lib/db";
-import { Category, Prisma } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import { NextResponse, NextRequest } from "next/server";
 
 export async function GET(req: Request | NextRequest) {
   try {
-    const conditions: Prisma.BlogWhereInput[] = [];
+    const conditions: Prisma.BlogsWhereInput[] = [];
     const queries = req.url?.split('?')[1]?.split('&');
 
     const pick = (queriesArr: string[] | undefined, field: string) => (
@@ -50,16 +50,7 @@ export async function GET(req: Request | NextRequest) {
     };
 
 
-    if (category) {
-      conditions.push({
-        category: {
-          equals: category as Category,
-        }
-      })
-    };
-
-
-    const result = await db.blog.findMany({
+    const result = await db.blogs.findMany({
       skip: page * limit,
       take: limit,
       orderBy: sortBy && sortOrder ? {
@@ -69,7 +60,7 @@ export async function GET(req: Request | NextRequest) {
       },
       where: { AND: conditions }
     });
-    const total = await db.blog.count({ where: { AND: conditions } })
+    const total = await db.blogs.count({ where: { AND: conditions } })
 
     return NextResponse.json({
       success: true,
@@ -89,7 +80,7 @@ export async function GET(req: Request | NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
-    const result = await db.blog.create({ data })
+    const result = await db.blogs.create({ data })
     return NextResponse.json({
       success: true,
       message: 'Blog created',

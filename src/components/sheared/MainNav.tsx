@@ -28,19 +28,19 @@ const MainNav = () => {
 
   const links = [
     {
-      path: '#about',
+      path: '/#about',
       title: 'About'
     },
     {
-      path: '#projects',
+      path: '/#projects',
       title: 'Projects'
     },
     {
-      path: '#blogs',
+      path: '/#blogs',
       title: 'Blogs'
     },
     {
-      path: '#contact',
+      path: '/#contact',
       title: 'Contact'
     }
   ];

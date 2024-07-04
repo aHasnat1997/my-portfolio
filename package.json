@@ -10,6 +10,9 @@
     "deploy": "vercel --prod",
     "postinstall": "prisma generate"
   },
+  "prisma": {
+    "seed": "ts-node src/lib/seed.js"
+  },
   "buildCommand": "npm run build && prisma generate",
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -24,6 +27,7 @@
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-toggle": "^1.0.3",
     "@reduxjs/toolkit": "^2.2.3",
+    "@tanstack/react-table": "^8.19.2",
     "@tiptap/extension-bullet-list": "^2.3.0",
     "@tiptap/extension-heading": "^2.3.0",
     "@tiptap/extension-list-item": "^2.3.0",
@@ -32,6 +36,7 @@
     "@tiptap/pm": "^2.3.0",
     "@tiptap/react": "^2.3.0",
     "@tiptap/starter-kit": "^2.3.0",
+    "bcrypt": "^5.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "html-react-parser": "^5.1.10",
@@ -49,7 +54,8 @@
     "zod": "^3.23.4"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/bcrypt": "^5.0.2",
+    "@types/node": "^20.14.9",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
@@ -57,6 +63,7 @@
     "postcss": "^8",
     "prisma": "^5.12.1",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
   }
 }

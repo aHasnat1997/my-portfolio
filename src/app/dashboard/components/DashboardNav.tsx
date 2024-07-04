@@ -20,7 +20,7 @@ function DashboardNav() {
       title: 'Projects'
     },
     {
-      path: '/dashboard',
+      path: '/dashboard/blogs',
       title: 'Blogs'
     },
     {
@@ -30,28 +30,26 @@ function DashboardNav() {
   ];
 
   const NavList = ({ path, title }: { path: string, title: string }) => (
-    <div
-      className="group w-full hover:bg-white/5"
-    >
-      <Link href={path} className="text-2xl font-semibold w-full">{title}</Link>
-    </div>
+    <Link href={path} className="text-2xl font-semibold w-full">
+      <p className="w-full p-4 hover:bg-white/15">{title}</p>
+    </Link>
   );
 
   const FullNav = () => (
     <div className="h-full w-52 flex flex-col items-center justify-between">
-      <div className="flex flex-col items-end justify-center">
+      <div className="w-full flex flex-col items-center justify-center">
         <Link href='/dashboard'>
           <Image
             alt="logo"
             src={assets.image.logoW}
-            width={60}
-            height={60}
+            width={100}
+            height={100}
             className="duration-500 hover:drop-shadow-[0_4px_8px_rgb(255,255,255)]"
           />
         </Link>
-        <ul className="w-full mt-8 space-y-6">
+        <ul className="w-full mt-8">
           {
-            links.map((link, i) => <li key={i} className="w-full border">
+            links.map((link, i) => <li key={i} className="w-full">
               <NavList path={link.path} title={link.title} />
             </li>)
           }
@@ -84,7 +82,7 @@ function DashboardNav() {
         </SheetTrigger>
         <SheetContent>
           <Button variant={'outline'}>Log Out...</Button>
-          <ul className="mt-8 space-y-6 text-xl">
+          <ul className="mt-8 text-xl">
             {
               links.map((link, i) => <li key={i}>
                 <NavList path={link.path} title={link.title} />
@@ -98,7 +96,7 @@ function DashboardNav() {
 
   return (
     <nav className='lg:h-full'>
-      <div className="py-4 px-2 h-full hidden md:block border-r-2">
+      <div className="py-4 h-full hidden md:block border-r-2">
         <FullNav />
       </div>
       <div className="w-full block md:hidden border-b-2">

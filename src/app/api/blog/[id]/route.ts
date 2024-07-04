@@ -4,12 +4,9 @@ import { NextResponse } from "next/server";
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   try {
     const blogId = params.id;
-    const result = await db.blog.findUniqueOrThrow({
+    const result = await db.blogs.findUniqueOrThrow({
       where: {
         id: blogId
-      },
-      include: {
-        user: true
       }
     });
     return NextResponse.json({
