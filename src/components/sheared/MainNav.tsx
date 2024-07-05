@@ -36,8 +36,8 @@ const MainNav = () => {
       title: 'Projects'
     },
     {
-      path: '/#blogs',
-      title: 'Blogs'
+      path: '/blog',
+      title: 'All Blogs'
     },
     {
       path: '/#contact',

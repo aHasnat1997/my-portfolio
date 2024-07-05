@@ -28,14 +28,13 @@ function DashboardNav() {
     }
   ];
   const pathname = usePathname();
-  const isActive = (href: string) => pathname === href;
 
   const NavList = ({ path, title }: { path: string, title: string }) => (
     <Link
       href={path}
-      className={`text-2xl font-semibold w-full ${isActive(path) ? 'bg-white/15' : ''}`}
+      className='text-2xl font-semibold w-full'
     >
-      <p className="w-full p-4 hover:bg-white/15">{title}</p>
+      <p className={`w-full p-4 hover:bg-white/5 ${pathname === path ? 'bg-white/15' : ''}`}>{title}</p>
     </Link>
   );
 

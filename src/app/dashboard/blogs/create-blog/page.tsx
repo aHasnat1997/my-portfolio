@@ -49,7 +49,7 @@ const CreateBlog = () => {
 
     const cerated = await createBlog(blogData);
     if (cerated.success) {
-      router.push(`/blog/${cerated?.data?.id}`);
+      router.push('/dashboard/blogs');
       toast({
         title: "Blog Successfully Post...",
       });

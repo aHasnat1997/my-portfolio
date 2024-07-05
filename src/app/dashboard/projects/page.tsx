@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { DashboardTable } from "../components/DashboardTable";
 import { ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontal, ArrowUpDown, } from "lucide-react";
+import { MoreHorizontal, ArrowUpDown, Eye, FilePenLine, Trash2, } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -64,20 +64,21 @@ function ProjectsPage() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="h-8 w-8 p-0 text-right">
-                  <span className="sr-only">Open menu</span>
                   <MoreHorizontal className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                <DropdownMenuItem
-                  onClick={() => navigator.clipboard.writeText(payment.id)}
-                >
-                  Copy payment ID
+                <DropdownMenuItem className="flex gap-4">
+                  <Eye /> View Project
                 </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>View customer</DropdownMenuItem>
-                <DropdownMenuItem>View payment details</DropdownMenuItem>
+                <DropdownMenuItem className="flex gap-4">
+                  <FilePenLine /> Edit Project
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex gap-4">
+                  <Trash2 />
+                  Delete Project
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
