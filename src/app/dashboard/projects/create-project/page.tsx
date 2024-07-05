@@ -8,20 +8,22 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod";
 import TextEditor from "@/components/editor/TextEditor";
-import { TBlog } from "@/types";
+import { TProject } from "@/types";
 import { useToast } from "@/components/ui/use-toast";
 import DOMPurify from "isomorphic-dompurify";
-import createBlog from "@/actions/createBlog";
 import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
-  title: z.string().min(2),
-  imageUrl: z.string().min(2),
-  summary: z.string().min(2),
-  content: z.string().min(2),
+  title: z.string(),
+  summary: z.string(),
+  aboutProject: z.string(),
+  imageUrl: z.string().url("Invalid URL"),
+  liveLink: z.string().url("Invalid URL").optional().or(z.literal("")),
+  githubLinkFoClient: z.string().url("Invalid URL").optional().or(z.literal("")),
+  githubLinkFoServer: z.string().url("Invalid URL").optional().or(z.literal("")),
 });
 
-const CreateBlog = () => {
+const CreateProject = () => {
   const { toast } = useToast();
   const router = useRouter();
 
@@ -30,40 +32,49 @@ const CreateBlog = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       title: '',
-      imageUrl: '',
       summary: '',
-      content: ''
+      aboutProject: '',
+      imageUrl: '',
+      liveLink: '',
+      githubLinkFoClient: '',
+      githubLinkFoServer: ''
     },
   });
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
     // console.log(values);
-    const cleanContent = DOMPurify.sanitize(values.content);
-    const blogData: TBlog = {
+    const cleanContent = DOMPurify.sanitize(values.aboutProject);
+    const projectData: TProject = {
       title: values.title,
+      summary: values.summary,
+      aboutProject: values.aboutProject,
       imageUrl: values.imageUrl,
-      content: cleanContent,
-      summary: values.summary
+      liveLink: values.liveLink || "",
+      githubLinkFoClient: values.githubLinkFoClient || "",
+      githubLinkFoServer: values.githubLinkFoServer || "",
     };
+    console.log(projectData);
 
-    const cerated = await createBlog(blogData);
-    if (cerated.success) {
-      router.push(`/blog/${cerated?.data?.id}`);
-      toast({
-        title: "Blog Successfully Post...",
-      });
-    }
-    else if (!cerated.success) {
-      toast({
-        title: "Blog Post failed...",
-      })
-    }
+    router.push(`/dashboard/projects`);
+
+    // const cerated = await createProject(projectData);
+    // if (cerated.success) {
+    //   router.push(`/project/${cerated?.data?.id}`);
+    //   toast({
+    //     title: "Project Successfully Post...",
+    //   });
+    // }
+    // else if (!cerated.success) {
+    //   toast({
+    //     title: "Project Post failed...",
+    //   })
+    // }
   };
 
   return (
     <section className="space-y-8 pb-8">
-      <h1 className="text-6xl font-bold">Create Blog</h1>
+      <h1 className="text-6xl font-bold">Create Project</h1>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <div className="flex items-center gap-8">
@@ -73,7 +84,7 @@ const CreateBlog = () => {
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormControl>
-                    <Input placeholder="Blog Title" {...field} />
+                    <Input placeholder="Project Title" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -95,30 +106,31 @@ const CreateBlog = () => {
           <FormField
             control={form.control}
             name="summary"
-            render={({ field }) => (<FormItem className="w-full">
-              <div className="flex items-center justify-end">
-                <p className="text-muted-foreground">
-                  {field.value.length} / 250
-                </p>
-              </div>
-              <FormControl>
-                <Textarea
-                  rows={2}
-                  placeholder="Blog Summary"
-                  className="resize-none no-scrollbar"
-                  maxLength={250}
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>)}
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <div className="flex items-center justify-end">
+                  <p className="text-muted-foreground">
+                    {field.value.length} / 250
+                  </p>
+                </div>
+                <FormControl>
+                  <Textarea
+                    rows={2}
+                    placeholder="Project Summary"
+                    className="resize-none no-scrollbar"
+                    maxLength={250}
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>)}
           />
           <FormField
             control={form.control}
-            name="content"
+            name="aboutProject"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Blog Content</FormLabel>
+                <FormLabel>Project Content</FormLabel>
                 <FormControl>
                   <TextEditor
                     content={field.value}
@@ -136,4 +148,4 @@ const CreateBlog = () => {
   );
 };
 
-export default CreateBlog;
+export default CreateProject;

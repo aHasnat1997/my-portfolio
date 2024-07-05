@@ -1,8 +1,11 @@
+"use client";
+
 import assets from "@/assets";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CgMenuRight } from "react-icons/cg";
 
 function DashboardNav() {
@@ -12,25 +15,26 @@ function DashboardNav() {
       title: 'Home'
     },
     {
-      path: '/dashboard',
+      path: '/dashboard/about',
       title: 'About'
     },
     {
-      path: '/dashboard',
+      path: '/dashboard/projects',
       title: 'Projects'
     },
     {
       path: '/dashboard/blogs',
       title: 'Blogs'
-    },
-    {
-      path: '/dashboard',
-      title: 'Contact'
     }
   ];
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href;
 
   const NavList = ({ path, title }: { path: string, title: string }) => (
-    <Link href={path} className="text-2xl font-semibold w-full">
+    <Link
+      href={path}
+      className={`text-2xl font-semibold w-full ${isActive(path) ? 'bg-white/15' : ''}`}
+    >
       <p className="w-full p-4 hover:bg-white/15">{title}</p>
     </Link>
   );

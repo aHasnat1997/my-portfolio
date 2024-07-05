@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod";
-import TextEditor from "@/components/createBlog/TextEditor";
+import TextEditor from "@/components/editor/TextEditor";
 import { TBlog } from "@/types";
 import { useToast } from "@/components/ui/use-toast";
 import DOMPurify from "isomorphic-dompurify";

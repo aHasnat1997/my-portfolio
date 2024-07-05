@@ -14,7 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-function BlogPage() {
+function ProjectsPage() {
   type Payment = {
     id: string
     amount: number
@@ -274,9 +274,9 @@ function BlogPage() {
   return (
     <section className="space-y-12">
       <div className="flex items-center justify-between">
-        <h1 className="text-6xl font-bold">Blogs Page</h1>
-        <Link href={'/dashboard/blogs/create-blog'}>
-          <Button>Create Blog</Button>
+        <h1 className="text-6xl font-bold">Projects Page</h1>
+        <Link href={'/dashboard/projects/create-project'}>
+          <Button>Create Project</Button>
         </Link>
       </div>
       <div>
@@ -286,4 +286,4 @@ function BlogPage() {
   );
 }
 
-export default BlogPage;
+export default ProjectsPage;

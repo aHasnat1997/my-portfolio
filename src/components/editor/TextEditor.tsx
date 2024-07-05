@@ -9,8 +9,8 @@ import Underline from '@tiptap/extension-underline';
 import Strike from '@tiptap/extension-strike';
 
 const TextEditor = (
-  { blogContent, onChange }:
-    { blogContent: string, onChange: (richText: string) => void }
+  { content, onChange }:
+    { content: string, onChange: (richText: string) => void }
 ) => {
   const editor = useEditor({
     extensions: [
@@ -29,7 +29,7 @@ const TextEditor = (
       Underline.configure(),
       Strike.configure()
     ],
-    content: blogContent,
+    content: content,
     editorProps: {
       attributes: {
         class: 'border focus:rounded-none h-[40rem] p-4 overflow-y-scroll no-scrollbar',

@@ -8,3 +8,16 @@ export type TBlog = {
   createdAt?: Date;
   updatedAt?: Date;
 };
+
+export type TProject = {
+  id?: string;
+  title: string;
+  summary: string;
+  aboutProject: string;
+  imageUrl: string;
+  liveLink?: string;
+  githubLinkFoClient?: string;
+  githubLinkFoServer?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
