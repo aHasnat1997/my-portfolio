@@ -28,7 +28,7 @@ const assets = {
   },
   projects: {
     project1: require('./projects/Travel-Buddy-full.png'),
-    project2: require('./projects/Healthcare-Clint-full.png'),
+    project2: require('./projects/discord-bot.png'),
     project3: require('./projects/next-blog-app.png'),
     project4: require('./projects/Melody-Masters.png'),
     project5: require('./projects/Heroic-Toys.png'),
